@@ -1,0 +1,435 @@
+/************************************/
+基本命令
+C-x C-f      打开/新建文件
+C-x C-s     保存当前缓冲区
+C-x C-w    当前缓冲区另存为
+C-x C-v     关闭当前Buffer并打开新文件.
+M-x revert-buffer  刷新文件
+C-x i          光标处插入文件
+C-x b         切换Buffer
+C-x C-b     显示Buffer列表
+C-x k         关闭当前Buffer
+C-x C-c     关闭Emacs
+
+C-x o
+Select another window (other-window). That is o, not zero.
+C-M-v
+Scroll the next window (scroll-other-window).
+M-x compare-windows
+Find next place where the text in the selected window does not match the text in the next window.
+Mouse-1
+Mouse-1, in a window's mode line, selects that window but does not move point in it (mouse-select-window).
+
+C-x C-f dirname ;;打开一个目录
+
+M-x revert-buffer  刷新文件
+
+Global-Font-Lock 语法颜色
+
+ emacs 列编辑
+快捷键如下表
+列编辑快捷键	描述
+C-x r k	剪切一个矩形块
+C-x r y	粘贴一个矩形块
+C-x r o	插入一个矩形块
+C-x r c	清除一个矩形块(使其变成空白)
+C-x r t	在选定区域的所有列前插入相同的字符串
+示例一：添加多行注释
+先按快捷键 Ctrl-Space 进入选中模式，选中一个区域，再按快捷键 C-x r t ，然后输入 ;; RET
+
+
+
+Undo
+To undo, press Ctrl+_
+
+M-x whitespace-mode
+or
+M-x global-whitespace-mode
+
+
+【显示行号】M+x display-line-number-mode <Return>
+
+【跳转行号】M+x goto-line 然后输入你想跳转到的行号 <Return>
+
+M-x grep 命令会在一组文件或者一个目录中查找所有text出现的地方。
+M-x rgrep  
+M-x find-name-dired 
+
+M-x rename 
+
+M-!  shell cmd
+
+normal-erase-is-backspace-mode  
+
+list lines containing a string
+Alt+x list-matching-lines
+Alt+x delete-matching-lines
+Alt+x delete-non-matching-lines
+
+highlight all occurrences of word
+Alt+x highlight-phrase
+Alt+x highlight-regexp
+Alt+x highlight-lines-matching-regexp
+
+delete trailing white spaces
+Alt+x delete-trailing-whitespace does it to the whole buffer.
+
+[see Emacs: Delete Trailing Whitespace]
+
+make spaces and tabs visible
+Alt+x whitespace-mode.
+
+Open, Save, Close, File
+Ctrl+x Ctrl+f • find-file • Open
+Ctrl+x Ctrl+s • save-buffer • Save
+Ctrl+x k • kill-buffer • Close
+Copy Paste Undo
+Ctrl+_ • undo • Undo. (To redo, type Ctrl+g (or any other character) then undo. (all subsequent undo is redo, until you type something else.))
+Alt+w • kill-ring-save • Copy
+Ctrl+w • kill-region • Cut
+Ctrl+y • yank • Paste
+Moving Cursor
+Use the arrow keys ↑ ↓ ← →, and Home, End, PageUp, PageDown keys.
+
+Ctrl+← or Alt+b • backward-word • Move cursor left by word.
+Ctrl+→ or Alt+f • forward-word • Move cursor right by word.
+Ctrl+Home or Alt+< • beginning-of-buffer • Beginning of file.
+Ctrl+End or Alt+> • end-of-buffer • End of document.
+Ctrl+f • forward-char • Move cursor right 1 char.
+Ctrl+b • backward-char • Move cursor left 1 char.
+Ctrl+v • scroll-up-command • page down
+Alt+v • scroll-down-command • page up
+Deleting Text
+Alt+d • kill-word • Delete the word to the right.
+Alt+Backspace • backward-kill-word • Delete the previous word
+Ctrl+k • kill-line • Delete all characters from cursor to end of line
+Select Text
+Ctrl+Space • set-mark-command • Mark the starting point for copy/cut a text. (then move cursor to extend selection.)
+Ctrl+x h • mark-whole-buffer • Select All
+Split Window
+Ctrl+x 2 • split-window-below • Split window top / bottom
+Ctrl+x 3 • split-window-right • Split window side by side
+Ctrl+x 1 • delete-other-windows • Remove all split panes
+Ctrl+x o • other-window • Move cursor to the other pane
+Searching Text
+To search a word, press Ctrl+s, then type your search text, emacs will move the cursor to the location of the matched text as you type. Press Ctrl+s again to jump to the next occurrence, press Ctrl+r to jump to the previous occurrence.
+
+Once you found what you are looking for, press Enter to exit.
+
+To exit search and leave the cursor at the place before search started, press Ctrl+g.
+
+How to change file line endings between Windows/Unix/Mac?
+Alt+x set-buffer-file-coding-system, then give a value of “mac”, “dos”, “unix”. Then, save.
+
+eww 浏览器
+/************************************/
+窗口命令
+C-x 2       水平分割窗格
+C-x 3       垂直分割窗格
+C-x 0      关闭当前窗口
+C-x o      切换窗口
+C-x 1       关闭其他窗口
+C-x 5 2   新建窗口
+C-x 5 f    新窗口中打开文件
+
+Call M-x customize-option RET ecb-source-path RET1.
+
+package-install
+
+ecb-activate
+ecb-deactivate
+
+C-c . g d
+C-c . g 加个窗口缩写可以进入某个窗口,如C-c . g d可进入ecb的目录窗口, directories/sources/methods/history
+C-x o可以在ecb窗口间切换,在ecb窗口中按tab可以打开和收缩某个列表,按回车可打开某样功能.按C-c . l
+w可以显示或隐藏ecb窗口.ecb设置了多种模式,按C-c . l t可以在预设的几种模式间切换,按C-c . l
+c然后输入模式名可以切换到某个模式下.
+
+key	binding
+C-c	 
+C-c .	 
+C-c . f	 
+C-c . g	跳转类( goto )
+C-c . l	布局类( layout )
+C-c . m	
+ 窗口最大化类(maximize)
+
+(1) 跳转类命令（ goto,    前缀： C-c . g  ）
+
+浏览记录跳转
+First, to mark a position, set-mark-command 【Ctrl+Space】. (do it twice to remove the highlight.) This pushes current position into the mark-ring.
+
+There are 3 ways to jump cursor to a previous position.
+
+Press Ctrl+u Ctrl+Space → Move cursor to previous marked position in current buffer. Repeat call will move cursor to positions in mark-ring.
+Alt+x pop-global-mark 【Ctrl+x Ctrl+Space】 → Move cursor to previous marked position (may be in another buffer). Repeat call will move cursor to positions in global-mark-ring.
+Alt+x exchange-point-and-mark 【Ctrl+x Ctrl+x】 → Move cursor to the other end of selection.
+
+
+key
+跳转位置
+C-c . g 1	编辑区1
+C-c . g 2	编辑区2
+C-c . g a	analyse窗口
+C-c . g b	speedbar窗口
+C-c . g c	compilation窗口
+C-c . g d	directories窗口
+C-c . g h	history窗口
+C-c . g l	上次编辑
+C-c . g m	methods窗口
+C-c . g s	sources窗口
+(2)布局类( layout, 前缀 C-c . l )
+
+key	操作
+C-c . l c	更改布局
+C-c . l r	重新布局
+C-c . l t	布局锁定开关
+C-c . l w	锁定可见的ECB窗口
+ 
+
+ 
+
+(3)窗口最大化类( maximize, 前缀 C-c . m )
+
+key	操作窗口
+C-c . m a	analyse窗口
+C-c . m b	speedbar窗口
+C-c . m d	directories窗口
+C-c . m h	history窗口
+C-c . m m	methods窗口
+C-c . m s	sources窗口
+
+/************************************/
+
+用Emacs+etags+cscope可以让你的Emacs拥有比Source Insight强大的代码阅读功能。
+
+etags: 这个是Emacs内置的功能，etags主要的功能是寻找一个变量或者函数的定义。用法如下：
+
+以下是指定搜索/home/carryf目录下的所有文件，但是会忽略/home/carryf/astetc的路径：
+
+find $SDK -path "$SDK/libs" -prune -o -type f -print
+
+find . -path "./libs" -name "*.[ch]" -print | etags -
+
+如果按照文件名来搜索则为：
+
+find /home/carryf -path "/home/carryf/astetc" -prune -o -type f -name "cdr_*.conf" -print
+
+find . -path "./libs" -prune -o -type f -name "*.[ch]" -print | etags -
+
+1，生成TAGS索引文件：
+
+find ./ -path "./libs" -prune -o -type f -name "*.[ch]" -print | etags -
+
+find . -path "./bcm" -prune -o -type f -name "*.[ch]" -print | etags -
+
+
+find . -name "*.[ch]" -print | etags -
+
+ find ./include/ ./src/ -name "*.[ch]" -print | etags -
+
+生成tcl TAGS索引文件
+etags --language=none --regex='/proc[ \t]+\([^ \t]+\)/\1/' `find . -name "*.tcl"`
+
+
+etags `find . -name "*.[ch]"`
+
+或  etags `find . -name "*.h" -o "*.cpp"
+
+或者在Emacs里进入到源代码根目录下，运行：
+
+M-! etags *.[ch]
+etags *.[ch]
+2，打开Emacs，读入TAGS
+
+      M-x visit-tags-table
+
+3，
+
+      M-. ：跳至相应的函数定义处；
+      M-, ：返回刚才的函数名处；
+	  M-* ：返回刚才的函数名处；  old emacs version
+	  C-M-. 输入函数名，查找其定义
+      C-u M-. ：查找下一个tags
+
+高亮显示 
+hightlight-regexp C-x w h
+unhightlight-regexp C-x w r  
+isearch-hightlight-regexp
+	  
+/************************************/
+
+显示行号
+M-x global-linum-mode
+M-g g 行号
+
+光标移动命令
+C-f         前进一个字符
+C-b       后退一个字符
+C-p       上一行
+C-n       下一行
+M-f       前进一个单词
+M-b     后退一个单词
+C-a       行首
+C-e       行尾
+C-v       下翻一页
+M-v      上翻一页
+M-<      文件头
+M->      文件尾
+
+基本移动
+C-M-f 　　//注意Ｃ－－Ctrl M—Alt　，移动到下一个匹配符号处　( ) { }　都算符号匹配处
+C-M-d 　//移动到上一个符号匹配处
+C-M- //第三个键为空格，选中当前匹配的段
+C-M-h 　　//选中当前函数
+C-M-k 　　//删除当前匹配的段，例如光标放在函数开始的”{” ，执行后删除该函数
+C-M-a 　　//光标在当前文档的所有函数定义位置切换
+C-M-e　　//在所有函数定义的结尾处切换
+
+跳转
+Ｍ-. //跳转到定义或引用
+Ｍ-] //跳转到引用
+Ｃ-c M-o //发现其他符号，在下边列出的位置中　Ｍ-n M-p 来切换
+M-x speedbar
+————————————————
+
+(dolist (map (list ggtags-mode-map dired-mode-map))
+  (define-key map (kbd "C-c g s") 'ggtags-find-other-symbol)
+  (define-key map (kbd "C-c g h") 'ggtags-view-tag-history)
+  (define-key map (kbd "C-c g r") 'ggtags-find-reference)
+  (define-key map (kbd "C-c g f") 'ggtags-find-file)
+  (define-key map (kbd "C-c g c") 'ggtags-create-tags)
+  (define-key map (kbd "C-c g u") 'ggtags-update-tags)
+  (define-key map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+  (define-key map (kbd "M-.") 'ggtags-find-tag-dwim)
+  (define-key map (kbd "M-,") 'pop-tag-mark)
+  (define-key map (kbd "C-c <") 'ggtags-prev-mark)
+  (define-key map (kbd "C-c >") 'ggtags-next-mark))
+
+/**********************************/
+
+https://techtooltip.wordpress.com/2012/01/06/how-to-integrate-emacs-cscope-to-browse-linux-kernel-source-code/
+  
+sudo apt-get install emacs23 cscope cscope-el
+find . -name '*.c' -o -name '*.h' -o -name '*.cc'  > cscope.files
+
+cscope -b -q -k -R
+cscope -b -q -k
+M-x cscope-set-initial-director
+
+M-x cscope-minor-mode
+  
+  
+  默认是的快捷键都是绑定到 C-c s 的前缀上面，如果嫌麻烦的话可以自己更改 快捷键绑定。这是默认的用于查找的键绑定：
+
+C-c s s         Find symbol.
+C-c s d         Find global definition.
+C-c s g         Find global definition (alternate binding).
+C-c s G         Find global definition without prompting.
+C-c s c         Find functions calling a function.
+C-c s C         Find called functions (list functions called
+                from a function).
+C-c s t         Find text string.
+C-c s e         Find egrep pattern.
+C-c s f         Find a file.
+C-c s i         Find files #including a file.
+下面是在搜索到的结果之间切换用的快捷键：
+
+C-c s b         Display *cscope* buffer.
+C-c s B         Auto display *cscope* buffer toggle.
+C-c s n         Next symbol.
+C-c s N         Next file.
+C-c s p         Previous symbol.
+C-c s P         Previous file.
+C-c s u         Pop mark.
+
+/**********************************/
+编辑命令
+C-Space         设置开始标记
+C-@                设置开始标记(C-space可能被操作系统拦截)
+M-w                复制标记区内容
+C-y                  帖粘
+M-u                使光标处的单词大写
+M-l                 使光标处的单词小写
+M-c                使光标处单词首字母大写
+C-k                  删除一行
+
+undo → undo 【Ctrl+_】
+cut → kill-region 【Ctrl+w】
+copy → kill-ring-save 【Alt+w】
+paste → yank 【Ctrl+y】
+
+
+
+/**********************************/
+搜索/替换命令
+C-s          向下搜索
+C-r          向上搜索
+M-%       替换
+-              space/y     替换当前匹配
+-              Del/n          不要替换当前匹配
+-              .                    仅替换当前匹配并退出
+-              ,                    替换并暂停(按space或y继续)
+-              !                    替换所有匹配
+-             ^                   回到上一个匹配位置
+-             return/q    退出替换
+
+
+1.Emacs浏览器及快捷键
+ M-x eww //进入浏览器
+********************************************
+     eww浏览器快捷键
+********************************************
+按键	函数	作用
+q	eww-quit	退出eww
+g	eww-reload	重载该页面
+w	eww-copy-page-url	拷贝当前URL到kill ring
+d	eww-download	下载光标所在的URL,下载的目录存在变量`eww-download-directory`中,默认为~/Downloads
+l	eww-back-url	回退上一个URL
+r	eww-forward-url	前进到下一个URL
+H	eww-list-histories	显示浏览历史
+b	eww-add-bookmark	加书签
+B	eww-list-bookmarks	显示书签列表
+&	eww-browse-with-external-browser	使用外部浏览器打开当前浏览的URL,外部浏览器由变量`shr-external-browser`决定
+v	eww-view-source	查看页面源代码
+C	eww-cookie-list	列示Cookie
+ 
+********************************************
+ 
+2.~/.emacs添加
+;;记录打开过的文件
+(recentf-mode 1)
+(global-set-key (kbd "<f7>") 'recentf-open-files)
+ 
+;;Ctrl+c, Ctrl+x, Ctrl+v模式
+(cua-mode 1)
+ 
+;;M-x: 输入命令补全（很爽)
+(icomplete-mode 1)
+ 
+4.快捷键
+% + m //查找标记文件
+Alt + ! //输入shell命令
+C-h m //查看快捷键
+C-h e //查看emacs回显
+Alt + s o //查找字符,并显示列表(实测只适用Mac OS)
+Alt + s h . //查找字符,并高亮显示(实测只适用Mac OS
+————————————————
+版权声明：本文为CSDN博主「慢慢的燃烧」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/u010164190/java/article/details/79542297
+
+
+
+--------
+Vim
+--------
+kjhl 上下左右
+ctags -R * 创建 符号表
+	Ctrl-]    跳转到光标所在符号的定义。
+	Ctrl-t    回到上次跳转前的位置。
+
+taglist   F9 打开   Ctrl+W 切换窗口
+
+撤销 ：undo
+
+C@-c
